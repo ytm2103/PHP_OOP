@@ -21,18 +21,53 @@
         </nav>
     </header>
     <main class="container py-5">
+
         <section>
-            <form class="form-row justify-content-center" action="create.php" method="POST">
-                <div class="col-10 col-md-6 py-2">
+            <form class="form-row" action="create.php" method="POST">
+                <div class="col-12 col-md-9 py-2">
                     <input type="text" class="form-control" placeholder="ADD TODO">
                 </div>
-                <div class="py-2 col-md-3 col-10">
-                    <button type="submit" class="col-12 btn btn-primary">ADD</button>
+                <div class="py-2 col-md-3 col-12">
+                    <button type="submit" class="col-12 btn btn-primary btn-block">ADD</button>
                 </div>
             </form>
         </section>
-        <section>
-            
+
+        <section class="mt-5">
+          <table class="table table-hover">
+              <thead>
+                <tr class="bg-primary text-light">
+                    <th class=>TODO</th>
+                    <th>DUE DATE</th>
+                    <th>STATUS</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td>create new website</td>
+                    <td>2019/08/21</td>
+                    <td>NOT YET</td>
+                    <td>
+                        <a class="text-success" href="edit.php">EDIT</a>
+                    </td>
+                    <td>
+                        <a class="text-danger" href="delete.php">DELETE</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>go to club</td>
+                    <td>2019/10/21</td>
+                    <td>DONE</td>
+                    <td>
+                        <a class="text-success" href="edit.php">EDIT</a>
+                    </td>
+                    <td>
+                        <a class="text-danger" href="delete.php">DELETE</a>
+                    </td>
+                </tr>
+              </thead>
+              <tbody></tbody>
+          </table>  
         </section>
     </main>
     
