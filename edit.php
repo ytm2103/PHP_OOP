@@ -9,11 +9,7 @@
     $todo = new Todo();
 
     //DBから指定したデータを1件取得
-    $task = $todo->get($id);
-
-    echo '<pre>';
-    var_dump($task);
-    exit();
+    $task = $todo->get($id);
 
 ?>
 <!DOCTYPE html>
@@ -42,10 +38,11 @@
         <section>
             <form class="form-row" action="update.php" method="POST">
                 <div class="col-12 col-md-9 py-2">
-                    <input type="text" name="task" class="form-control" placeholder="ADD TODO">
+                    <input type="text" name="task" class="form-control" placeholder="ADD TODO" value="<?php echo h($task['name']) ?>">
                 </div>
+                <input type="hidden" value="<?php echo h($task['id']) ?> ">
                 <div class="py-2 col-md-3 col-12">
-                    <button type="submit" class="col-12 btn btn-primary btn-block">ADD</button>
+                    <button type="submit" class="col-12 btn btn-primary btn-block">UPDATE</button>
                 </div>
             </form>
         </section>
