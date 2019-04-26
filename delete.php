@@ -8,7 +8,7 @@ $id = $_GET['id'];
 $todo = New Todo;
 
 //Todoクラスのcreateメソッドを実行
-$todo->delete($id);
+$res = $todo->delete($id);
 
-//index.phpに戻る
-header('Location: index.php');
+echo json_encode($res);
+exit();
