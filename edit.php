@@ -1,17 +1,3 @@
-<?php
-    require_once('function.php');
-    require_once('Models/Todo.php');
-
-    //選択されたtaskのidを取得
-    $id = $_GET['id'];
-
-    //Todoクラスのインスタンス化
-    $todo = new Todo();
-
-    //DBから指定したデータを1件取得
-    $task = $todo->get($id);
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,9 +24,9 @@
         <section>
             <form class="form-row" action="update.php" method="POST">
                 <div class="col-12 col-md-9 py-2">
-                    <input type="text" name="task" class="form-control" placeholder="ADD TODO" value="<?php echo h($task['name']) ?>">
+                    <input type="text" name="task" class="form-control" placeholder="ADD TODO" value="">
                 </div>
-                <input type="hidden" name="id" value="<?php echo h($task['id']) ?> ">
+                <input type="hidden" name="id" value="">
                 <div class="py-2 col-md-3 col-12">
                     <button type="submit" class="col-12 btn btn-primary btn-block">UPDATE</button>
                 </div>
