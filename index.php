@@ -59,7 +59,7 @@
                         <td><?php echo h($task['due_date']); ?></td>
                         <td>NOT YET</td>
                         <td>
-                            <a class="text-success" href="edit.php/?id=<?php echo h($task['id']); ?>">EDIT</a>
+                            <a class="text-success" href="edit.php?id=<?php echo h($task['id']); ?>">EDIT</a>
                         </td>
                         <td>
                             <a class="text-danger" href="delete.php<?php echo h($task['id']); ?>">DELETE</a>
