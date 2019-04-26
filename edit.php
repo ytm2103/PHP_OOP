@@ -1,6 +1,20 @@
 <?php
     require_once('function.php');
     require_once('Models/Todo.php');
+
+    //選択されたtaskのidを取得
+    $id = $_GET['id'];
+
+    //Todoクラスのインスタンス化
+    $todo = new Todo();
+
+    //DBから指定したデータを1件取得
+    $task = $todo->get($id);
+
+    echo '<pre>';
+    var_dump($task);
+    exit();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
