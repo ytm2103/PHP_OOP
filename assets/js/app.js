@@ -84,7 +84,7 @@ $(function () {
 
     //画面に追加したtaskを表示する
     function renderTask(task) {
-        $('tbody').append(
+        $('tbody').prepend(
             `<tr id="js-task-${task.id}">` +
             `<td>${task.name}</td>` +
             `<td>${task.due_date}</td>` +
@@ -93,7 +93,7 @@ $(function () {
                 `<a class="text-success" href="edit.php?id=${task.id}">EDIT</a>` +
             `</td>` +
             `<td>` +
-                `<a class="text-danger" id="js-delete-btn-${task.id}">DELETE</a>` +
+                `<a class="text-danger" href="" id="js-delete-btn-${task.id}">DELETE</a>` +
             `</td>` +
         `</tr>`
         );

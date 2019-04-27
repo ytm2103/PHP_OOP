@@ -64,7 +64,7 @@
                             <a class="text-success" href="edit.php?id=<?php echo h($task['id']); ?>">EDIT</a>
                         </td>
                         <td>
-                            <a class="text-danger" id="js-delete-btn-<?php echo h($task['id']) ?>" href="delete.php?id=<?php echo h($task['id']); ?>">DELETE</a>
+                            <a class="text-danger" id="js-delete-btn-<?php echo h($task['id']) ?>" href="">DELETE</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
