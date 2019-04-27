@@ -33,12 +33,12 @@
     <main class="container py-5">
 
         <section>
-            <form class="form-row" action="create.php" method="POST">
+            <form class="form-row">
                 <div class="col-12 col-md-9 py-2">
-                    <input type="text" name="task" class="form-control" placeholder="ADD TODO">
+                    <input type="text" name="task" class="form-control" placeholder="ADD TODO" id="js-task">
                 </div>
                 <div class="py-2 col-md-3 col-12">
-                    <button type="submit" class="col-12 btn btn-primary btn-block">ADD</button>
+                    <button class="col-12 btn btn-primary btn-block" id="js-add-task">ADD</button>
                 </div>
             </form>
         </section>
@@ -53,6 +53,8 @@
                     <th></th>
                     <th></th>
                 </tr>
+              </thead>
+              <tbody>
                 <?php foreach ($tasks as $task): ?>
                     <tr id="js-task-<?php echo h($task['id']); ?>">
                         <td><?php echo h($task['name']); ?></td>
@@ -66,8 +68,7 @@
                         </td>
                     </tr>
                 <?php endforeach; ?>
-              </thead>
-              <tbody></tbody>
+              </tbody>
           </table>  
         </section>
     </main>

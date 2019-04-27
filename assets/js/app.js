@@ -1,4 +1,7 @@
 $(function () {
+
+    //削除
+
     //idがjs-delete-btnで始まるIDがクリックされたとき
     $(document).on('click', '[id^="js-delete-btn-"]', function (e) {
         
@@ -45,6 +48,55 @@ $(function () {
 
     function deleteDOM(id) {
         $('#js-task-' + id).remove();
+    }
+
+
+    //追加
+    $(document).on('click', '#js-add-task', function (e) {
+
+        e.preventDefault();
+        let task = $('#js-task')
+        
+        createTask(task.val());
+        
+        //入力欄を空にする
+        task.val('');
+    });
+
+    function createTask(task) {
+        $.ajax({
+            url: 'create.php',
+            type: 'POST',
+            dataType: 'json',
+            data: {
+                task: task
+            }
+        })
+        .then(
+            function (task) {
+                renderTask(task);
+            },
+            function () {
+                console.log('error');
+            }
+        )        
+    }
+
+    //画面に追加したtaskを表示する
+    function renderTask(task) {
+        $('tbody').append(
+            `<tr id="js-task-${task.id}">` +
+            `<td>${task.name}</td>` +
+            `<td>${task.due_date}</td>` +
+            `<td>NOT YET</td>` +
+            `<td>` +
+                `<a class="text-success" href="edit.php?id=${task.id}">EDIT</a>` +
+            `</td>` +
+            `<td>` +
+                `<a class="text-danger" id="js-delete-btn-${task.id}">DELETE</a>` +
+            `</td>` +
+        `</tr>`
+        );
     }
 
 })

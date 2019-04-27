@@ -9,7 +9,9 @@ $task = $_POST['task'];
 $todo = New Todo;
 
 //Todoクラスのcreateメソッドを実行
-$todo->create($task);
+$createdTaskId = $todo->create($task);
 
-//index.phpに戻る
-header('Location: index.php');
+$task = $todo->get($createdTaskId);
+
+echo json_encode($task);
+exit();
