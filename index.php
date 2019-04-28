@@ -39,7 +39,6 @@
                     <tr class="bg-primary text-light">
                         <th class=>TODO</th>
                         <th>DUE DATE</th>
-                        <th>STATUS</th>
                         <th></th>
                         <th></th>
                     </tr>
@@ -48,7 +47,6 @@
                     <tr>
                         <td>create new website</td>
                         <td>2019/08/21</td>
-                        <td>NOT YET</td>
                         <td>
                             <a class="text-success" href="edit.php">EDIT</a>
                         </td>
@@ -59,7 +57,6 @@
                     <tr>
                         <td>go to club</td>
                         <td>2019/10/21</td>
-                        <td>DONE</td>
                         <td>
                             <a class="text-success" href="edit.php">EDIT</a>
                         </td>
