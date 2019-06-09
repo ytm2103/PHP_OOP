@@ -88,7 +88,6 @@ $(function () {
             `<tr id="js-task-${task.id}">` +
             `<td>${task.name}</td>` +
             `<td>${task.due_date}</td>` +
-            `<td>NOT YET</td>` +
             `<td>` +
                 `<a class="text-success" href="edit.php?id=${task.id}">EDIT</a>` +
             `</td>` +
