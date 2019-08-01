@@ -13,12 +13,15 @@ $task = $_POST['task'];
 
 // DBに保存
 
-//$stmt = $dbh->prepare('INSERT INTO surveys (nickname, email, content) VALUES (?, ?, ?)');
-//$stmt->execute([$nickname, $email, $content]);//?を変数に置き換えてSQLを実行
+
 
 // Todoクラスをインスタンス化して
 $todo = new Todo();
-var_dump($todo);
-exit; 
+
+// Todoクラスのインスタンスの
+// create メッソドを実行
+$todo->create($task);
+// var_dump($todo);
+// exit; 
 // 一覧画面に戻る
 header ('Location: index.php');
