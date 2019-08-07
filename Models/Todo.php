@@ -26,6 +26,7 @@ class Todo
         // dbhプロパティの
         // PDOのインスタンス
         //prepareメソッドを実行
+        // INSERT INTO(カラム名, .　)
 
         $stmt = $this->db_manager->dbh->prepare('INSERT INTO ' . $this->table . ' (name) VALUES (?)');
         $stmt->execute([$name]);
@@ -50,5 +51,18 @@ class Todo
         $tasks = $stmt->fetchAll(); 
         // return === 関数の呼び出し元に値を返す
         return $tasks;
+    }
+    public function get($id)
+    {
+        //  $idと一致するいどぉもつレコードを取得する
+        // 準備する
+        $stmt = $this->db_manager->dbh->prepare('SELECT * FROM ' . $this->table.  ' WHERE id = ?');
+        // 実行する
+        $stmt->execute([$id]);
+        // 実行結果を変数に代入する
+        $task= $stmt->fetch(); 
+        // 結果を関数の予呼び出し元に返す
+        return $task;
+        
     }
 }

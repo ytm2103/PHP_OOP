@@ -15,9 +15,9 @@ require_once('Models/Todo.php');
     
     $tasks = $todo->getAll();
 
-    echo'<pre>';
-    var_dump($tasks);
-    exit;
+    // echo'<pre>';
+    // var_dump($tasks);
+    // exit;
 ?>
 
   <!DOCTYPE html>
@@ -66,7 +66,20 @@ require_once('Models/Todo.php');
                     </tr>
                 </thead>
                 <tbody>
-                　　//取得したデータを表示する
+                <!-- 取得したデータを表示する -->
+                <?php foreach ($tasks as $task): ?>
+                    <tr id="js-task-<?php echo h($task['id']); ?>">
+                        <td><?php echo h($task['name']); ?></td>
+                        <td><?php echo h($task['due_date']); ?></td>
+                        <td>
+                            <a class="text-success" href="edit.php?id=<?php echo h($task['id']); ?>">EDIT</a>
+                        </td>
+                        <td>
+                            <a class="text-danger" id="js-delete-btn-<?php echo h($task['id']) ?>" href="">DELETE</a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+
                    
                     <tr>
                         <td>create new website</td>

@@ -1,3 +1,22 @@
+<?php
+// データの受取
+$id =$_GET['id'];
+
+// DBからデータの取得
+
+// Todoクラスをインスタンス化、＄todo という変数に代入
+require_once('Models/Todo.php');
+$todo = new Todo();
+
+// DB からデータを取得
+// todoクラス　getメソッドを実行
+$task　= $todo->get($id);
+var_dump($task);
+die;
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
