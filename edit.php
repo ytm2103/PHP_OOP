@@ -6,13 +6,16 @@ $id =$_GET['id'];
 
 // Todoクラスをインスタンス化、＄todo という変数に代入
 require_once('Models/Todo.php');
+require_once('function.php');
+
 $todo = new Todo();
 
 // DB からデータを取得
 // todoクラス　getメソッドを実行
-$task　= $todo->get($id);
-var_dump($task);
-die;
+$task = $todo->get($id);
+// var_dump($task);
+// var_dump();
+// die;
 
 
 ?>
@@ -43,9 +46,9 @@ die;
         <section>
             <form class="form-row" action="update.php" method="POST">
                 <div class="col-12 col-md-9 py-2">
-                    <input type="text" name="task" class="form-control" placeholder="ADD TODO" value="">
+                    <input type="text" name="task" class="form-control" placeholder="ADD TODO" value="<?php echo h($task['name']);?>">
                 </div>
-                <input type="hidden" name="id" value="">
+                <input type="hidden" name="id" value="<?php echo h($task['id']);?>">
                 <div class="py-2 col-md-3 col-12">
                     <button type="submit" class="col-12 btn btn-primary btn-block">UPDATE</button>
                 </div>
