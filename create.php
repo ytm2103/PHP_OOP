@@ -1,17 +1,22 @@
 <?php
 
+// Todo.phpを読み込む
 require_once('Models/Todo.php');
 
-//入力されたデータを変数taskに保存
+// ユーザーが入力した内容を取得
+// $taskっていう変数にユーザーが入力した内容代入
+// $task = ユーザーが入力した内容
 $task = $_POST['task'];
 
-//Todoクラスをインスタンス化
-$todo = New Todo;
+// DBに保存
 
-//Todoクラスのcreateメソッドを実行
-$createdTaskId = $todo->create($task);
+// Todoクラスをインスタンス化して$todoに代入
+$todo = new Todo();
 
-$task = $todo->get($createdTaskId);
+// Todoクラスのインスタンスの
+// createメソッドを実行
+$todo->create($task);
 
-echo json_encode($task);
-exit();
+
+// 一覧画面に戻る
+header('Location: index.php');

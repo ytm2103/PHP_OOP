@@ -1,17 +1,18 @@
 <?php
-
 require_once('Models/Todo.php');
-
-
-//入力されたデータを変数taskに保存
-$task = $_POST['task'];
+// データ更新
+// 更新するデータを特定する
+// データの受け取り
+// id, task
 $id = $_POST['id'];
-
-//Todoクラスをインスタンス化
-$todo = New Todo;
-
-//Todoクラスのcreateメソッドを実行
-$todo->update($task, $id);
-
-//index.phpに戻る
-header('Location: index.php');
+$task_name = $_POST['task'];
+// 更新
+// Todoクラスのインスタンスを$todoに代入
+$todo = new Todo();
+// Todoクラスのupdateメソッドを実行
+$todo->update($id, $task_name);
+// echo '<pre>';
+// var_dump($_POST);
+// die;
+// 一覧画面に戻る
+header('Location:index.php');

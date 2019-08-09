@@ -2,13 +2,19 @@
 
 require_once('Models/Todo.php');
 
+// echo '<pre>';
+// var_dump($_GET);
+// die;
+
+// データの受け取り
 $id = $_GET['id'];
 
-//Todoクラスをインスタンス化
-$todo = New Todo;
+// Todoクラスをインスタンス化
+$todo = new Todo();
 
-//Todoクラスのcreateメソッドを実行
-$res = $todo->delete($id);
+// データの削除
+// Todoクラスのdeleteメソッドを実行
+$todo->delete($id);
 
-echo json_encode($res);
-exit();
+// 一覧画面に戻る
+header('Location: index.php');
